@@ -42,26 +42,7 @@ void reverseArray(int arr[], int size){
   }
 }
 
-int main() {
-  int arr[] = {1, 2, 3, 4, 5};
-  int size = sizeof(size) / sizeof(arr[0]);
 
-  printf("Arreglo original: ");
-  for (int i = 0; i < size; i++){
-    printf("%d", arreglo[i]);
-  }
-  printf("\n");
-
-  reverseArray(arreglo, size);
-
-  printf("Arreglo invertido: ");
-  for (int i = 0; i < tam; i++){
-    printf("%d", arreglo[i]);
-  }
-  printf("\n");
-
-  return 0;
-}
 
 /*
 Ejercicio 3: Filtrar Números Pares
@@ -95,23 +76,6 @@ int* filtrar_pares(int arr[], int tam, int* nuevo_tam){
   return arreglo_pares;
 }
 
-int main() {
-  int arreglo[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  int tam = sizeof(arreglo) / sizeof(arreglo[0]);
-
-  int nuevo_tam;
-  int* arreglo_pares = filtrar_pares(arreglo, tam, &nuevo_tam);
-
-  printf("Arreglo original: ");
-  for (int i = 0; i < tam; i++) {
-    printf("%d ", arreglo[i]);
-  }
-  printf("\n");
-
-  free(arreglo_pares);
-
-  return 0;
-}
 
 /*
 Ejercicio 4: Fusión de dos Arreglos Ordenados
@@ -145,24 +109,7 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2, int merged[
     k++;
   }
 
-int main() {
-  int arr[] = (1, 3, 5, 7, 9);
-  int size1 = sizeof(arr1) / sizeof(arr1[0]);
 
-  int arr2[] = {2, 4, 6, 8, 10};
-  int size2 = sizeof(arr2) / sizeof(arr2[0]);
-
-  int result[size1 + size2];
-
-  mergeSortedArrays(arr1, size1, arr2, size2, merged);
-
-  printf("Arreglo fusionado:\n");
-  for (int i = 0; i < size1 + size2; i++) {
-    printf("%d ", merged[i]);
-  }
-
-  return 0;
-}
 
 /*
 Ejercicio 5: Comprobación de Ordenación
@@ -191,33 +138,7 @@ int comprobar_orden(int arreglo[], int tamaño) {
     }
 }
 
-int main() {
-    int tamaño;
-    printf("Ingresa el tamaño del arreglo: ");
-    scanf("%d", &tamaño);
 
-    if (tamaño <= 0) {
-        printf("El tamaño del arreglo debe ser mayor que cero.\n");
-        return 1; 
-    }
-
-    int arreglo[tamaño];
-    for (int i = 0; i < tamaño; i++) {
-        printf("Ingresa el elemento %d: ", i + 1);
-        scanf("%d", &arreglo[i]);
-    }
-
-    int resultado = comprobar_orden(arreglo, tamaño);
-    if (resultado == 1) {
-        printf("El arreglo está ordenado en orden ascendente.\n");
-    } else if (resultado == -1) {
-        printf("El arreglo está ordenado en orden descendente.\n");
-    } else {
-        printf("El arreglo no está ordenado.\n");
-    }
-
-    return 0; 
-}
 
 
 /*
