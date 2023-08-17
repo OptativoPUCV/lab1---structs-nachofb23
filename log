@@ -586,3 +586,111 @@ exercises.c:174:5: error: ‘main’ defined but not used [-Werror=unused-functi
 cc1: all warnings being treated as errors
 Compilation failed
 272905d
+Thu 17 Aug 2023 08:59:55 PM UTC: 
+ exercises.c | 48 +++++++++++-------------------------------------
+ 1 file changed, 11 insertions(+), 37 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘findMax’:
+exercises.c:13:9: error: ‘tam’ undeclared (first use in this function); did you mean ‘tan’?
+   13 |     if (tam == 0) {
+      |         ^~~
+      |         tan
+exercises.c:13:9: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c: In function ‘main’:
+exercises.c:51:18: error: ‘arreglo’ undeclared (first use in this function)
+   51 |     printf("%d", arreglo[i]);
+      |                  ^~~~~~~
+exercises.c:58:23: error: ‘tam’ undeclared (first use in this function); did you mean ‘tan’?
+   58 |   for (int i = 0; i < tam; i++){
+      |                       ^~~
+      |                       tan
+exercises.c: At top level:
+exercises.c:98:5: error: redefinition of ‘main’
+   98 | int main() {
+      |     ^~~~
+exercises.c:45:5: note: previous definition of ‘main’ with type ‘int()’
+   45 | int main() {
+      |     ^~~~
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:148:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  148 | int main() {
+      |     ^~~~
+exercises.c: In function ‘main’:
+exercises.c:149:17: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+  149 |   int arr[] = (1, 3, 5, 7, 9);
+      |                 ^
+exercises.c:149:20: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+  149 |   int arr[] = (1, 3, 5, 7, 9);
+      |                    ^
+exercises.c:149:23: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+  149 |   int arr[] = (1, 3, 5, 7, 9);
+      |                       ^
+exercises.c:149:26: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+  149 |   int arr[] = (1, 3, 5, 7, 9);
+      |                          ^
+exercises.c:149:15: error: invalid initializer
+  149 |   int arr[] = (1, 3, 5, 7, 9);
+      |               ^
+exercises.c:150:21: error: ‘sizeof’ on array function parameter ‘arr1’ will return size of ‘int *’ [-Werror=sizeof-array-argument]
+  150 |   int size1 = sizeof(arr1) / sizeof(arr1[0]);
+      |                     ^
+exercises.c:122:28: note: declared here
+  122 | void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2, int merged[]) {
+      |                        ~~~~^~~~~~
+exercises.c:155:7: error: unused variable ‘result’ [-Werror=unused-variable]
+  155 |   int result[size1 + size2];
+      |       ^~~~~~
+exercises.c:149:7: error: unused variable ‘arr’ [-Werror=unused-variable]
+  149 |   int arr[] = (1, 3, 5, 7, 9);
+      |       ^~~
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:194:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  194 | int main() {
+      |     ^~~~
+exercises.c:194:5: error: redefinition of ‘main’
+exercises.c:148:5: note: previous definition of ‘main’ with type ‘int()’
+  148 | int main() {
+      |     ^~~~
+test.c: In function ‘test_filterEvenNumbers’:
+test.c:151:19: error: implicit declaration of function ‘filterEvenNumbers’; did you mean ‘test_filterEvenNumbers’? [-Werror=implicit-function-declaration]
+  151 |     int *result = filterEvenNumbers(arr, size, &newSize);
+      |                   ^~~~~~~~~~~~~~~~~
+      |                   test_filterEvenNumbers
+test.c:151:19: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+test.c: In function ‘test_checkSorted’:
+test.c:258:18: error: implicit declaration of function ‘checkSorted’; did you mean ‘test_checkSorted’? [-Werror=implicit-function-declaration]
+  258 |     int result = checkSorted(arr, size);
+      |                  ^~~~~~~~~~~
+      |                  test_checkSorted
+test.c: In function ‘mergeSortedArrays’:
+test.c:382:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  382 | int main(int argc, char *argv[]) {
+      |     ^~~~
+test.c:382:5: error: redefinition of ‘main’
+In file included from test.c:1:
+exercises.c:194:5: note: previous definition of ‘main’ with type ‘int()’
+  194 | int main() {
+      |     ^~~~
+test.c:410:1: error: expected declaration or statement at end of input
+  410 | }
+      | ^
+test.c:7:6: error: unused variable ‘msg’ [-Werror=unused-variable]
+    7 | char msg[300];
+      |      ^~~
+At top level:
+test.c:382:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  382 | int main(int argc, char *argv[]) {
+      |     ^~~~
+test.c:47:6: error: ‘readIntArray’ defined but not used [-Werror=unused-function]
+   47 | void readIntArray(int arr[], int *size) {
+      |      ^~~~~~~~~~~~
+In file included from test.c:1:
+exercises.c:194:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  194 | int main() {
+      |     ^~~~
+exercises.c:148:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  148 | int main() {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+58c623e

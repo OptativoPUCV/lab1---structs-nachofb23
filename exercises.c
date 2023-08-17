@@ -9,44 +9,18 @@ Ejercicio 1: Encuentra el Elemento Mayor
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y devuelva el valor más grande del arreglo.
 */
-int encontrar_elemento_mayor(int arreglo[], int tam) {
+int findMax(int arr[], int size) {
     if (tam == 0) {
         return -1; 
     }
 
-    int mayor = arreglo[0];
-    for (int i = 1; i < tam; i++) {
-        if (arreglo[i] > mayor) {
-            mayor = arreglo[i];
+    int mayor = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > mayor) {
+            mayor = arr[i];
         }
     }
     return mayor;
-}
-
-int main() {
-    int tamaño;
-    printf("Ingresa el tamaño del arreglo: ");
-    scanf("%d", &tam);
-
-    if (tamaño <= 0) {
-        printf("El tamaño del arreglo debe ser mayor que cero.\n");
-        return 1; 
-    }
-
-    int arreglo[tamaño];
-    for (int i = 0; i < tam; i++) {
-        printf("Ingresa el elemento %d: ", i + 1);
-        scanf("%d", &arreglo[i]);
-    }
-
-    int mayor = encontrar_elemento_mayor(arreglo, tam);
-    if (mayor == -1) {
-        printf("El arreglo está vacío.\n");
-    } else {
-        printf("El elemento más grande del arreglo es: %d\n", mayor);
-    }
-
-    return 0; 
 }
 
 /*
@@ -54,9 +28,9 @@ Ejercicio 2: Invertir un Arreglo
 Descripción: Escribe una función que tome un arreglo y su tamaño, y luego
 invierta el orden de sus elementos.
 */
-void invertir_arreglo(int arr[], int tam){
+void reverseArray(int arr[], int size){
   int inicio = 0;
-  int fin = tam - 1; 
+  int fin = size - 1; 
 
   while (inicio < fin){
     int temp = arr[inicio];
@@ -69,16 +43,16 @@ void invertir_arreglo(int arr[], int tam){
 }
 
 int main() {
-  int arreglo[] = {1, 2, 3, 4, 5};
-  int tam = sizeof(arreglo) / sizeof(arreglo[0]);
+  int arr[] = {1, 2, 3, 4, 5};
+  int size = sizeof(size) / sizeof(arr[0]);
 
   printf("Arreglo original: ");
-  for (int i = 0; i < tam; i++){
+  for (int i = 0; i < size; i++){
     printf("%d", arreglo[i]);
   }
   printf("\n");
 
-  invertir_arreglo(arreglo, tam);
+  reverseArray(arreglo, size);
 
   printf("Arreglo invertido: ");
   for (int i = 0; i < tam; i++){
