@@ -196,48 +196,55 @@ Descripción: Escribe una función que tome un arreglo y su tamaño,
 y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
   0 si no está ordenado, y -1 si está ordenado en orden descendente.
 */
-int checkSorted(int arr[], int size) {
-  int ascendiente = 1;
-  int descendiente = 1;
+int comprobar_orden(int arreglo[], int tamaño) {
+    int ascendente = 1;
+    int descendente = 1;
 
-  for (int i = 1; i < size; i++) {
-      if (arr[i] < arr[i - 1]) {
-          ascendiente = 0;
-      }
-      if (arr[i] > arr[i - 1]) {
-          descendiente = 0;
-      }
-  }
+    for (int i = 1; i < tamaño; i++) {
+        if (arreglo[i - 1] > arreglo[i]) {
+            ascendente = 0;
+        }
+        if (arreglo[i - 1] < arreglo[i]) {
+            descendente = 0;
+        }
+    }
 
-  if (ascendiente == 1) {
-      return 1;  
-  } else if (descendiente == 1) {
-      return -1;
-  } else {
-      return 0;  
-  }
+    if (ascendente == 1) {
+        return 1;  
+    } else if (descendente == 1) {
+        return -1; 
+        return 0; 
+    }
 }
 
 int main() {
-  int arr1[] = {2, 4, 8, 10, 12};
-  int size1 = sizeof(arr1) / sizeof(arr1[0]);
+    int tamaño;
+    printf("Ingresa el tamaño del arreglo: ");
+    scanf("%d", &tamaño);
 
-  int arr2[] = {12, 10, 8, 4, 2};
-  int size2 = sizeof(arr2) / sizeof(arr2[0]);
+    if (tamaño <= 0) {
+        printf("El tamaño del arreglo debe ser mayor que cero.\n");
+        return 1; 
+    }
 
-  int arr3[] = {2, 4, 3, 8, 6};
-  int size3 = sizeof(arr3) /sizeof(arr3[0]);
+    int arreglo[tamaño];
+    for (int i = 0; i < tamaño; i++) {
+        printf("Ingresa el elemento %d: ", i + 1);
+        scanf("%d", &arreglo[i]);
+    }
 
-  int resultado1 = checkSorted(arr1, size1);
-  int resultado2 = checkSorted(arr2, size2);
-  int resultado3 = checkSorted(arr3, size3);
+    int resultado = comprobar_orden(arreglo, tamaño);
+    if (resultado == 1) {
+        printf("El arreglo está ordenado en orden ascendente.\n");
+    } else if (resultado == -1) {
+        printf("El arreglo está ordenado en orden descendente.\n");
+    } else {
+        printf("El arreglo no está ordenado.\n");
+    }
 
-  printf("Resultado 1: %d\n", resultado1);
-  printf("Resultado 2: %d\n", resultado2);
-  printf("Resultado 3: %d\n", resultado3);
-
-  return 0;
+    return 0; 
 }
+
 
 /*
 Ejercicio 6: Información de una Biblioteca
