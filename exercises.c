@@ -9,28 +9,44 @@ Ejercicio 1: Encuentra el Elemento Mayor
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y devuelva el valor más grande del arreglo.
 */
-int encontrar_elemento_mayor(int arr[], int tam){
-  if (tam <=0){
-    return -1;
-  }
-
-  int elemento_mayor = arr[0];
-  for (int i = 1; i < tam; i++){
-    if (arr[i] > elemento_mayor){
-      elemento_mayor = arr[i];
+int encontrar_elemento_mayor(int arreglo[], int tamaño) {
+    if (tamaño == 0) {
+        return -1; 
     }
-  }
-  return elemento_mayor;
+
+    int mayor = arreglo[0];
+    for (int i = 1; i < tamaño; i++) {
+        if (arreglo[i] > mayor) {
+            mayor = arreglo[i];
+        }
+    }
+    return mayor;
 }
 
-int main(){
-  int arreglo[] = {12, 39, 2, 9, 16};
-  int tam = sizeof(arreglo) / sizeof(arreglo[0]);
+int main() {
+    int tamaño;
+    printf("Ingresa el tamaño del arreglo: ");
+    scanf("%d", &tamaño);
 
-  int resultado = encontrar_elemento_mayor(arreglo, tam);
-  printf("El elemento mayor en el arreglo es: %d\n", resultado);
+    if (tamaño <= 0) {
+        printf("El tamaño del arreglo debe ser mayor que cero.\n");
+        return 1; 
+    }
 
-  return 0;
+    int arreglo[tamaño];
+    for (int i = 0; i < tamaño; i++) {
+        printf("Ingresa el elemento %d: ", i + 1);
+        scanf("%d", &arreglo[i]);
+    }
+
+    int mayor = encontrar_elemento_mayor(arreglo, tamaño);
+    if (mayor == -1) {
+        printf("El arreglo está vacío.\n");
+    } else {
+        printf("El elemento más grande del arreglo es: %d\n", mayor);
+    }
+
+    return 0; 
 }
 
 /*
