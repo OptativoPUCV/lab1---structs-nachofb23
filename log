@@ -3,3 +3,45 @@ Thu 17 Aug 2023 08:22:42 PM UTC:
  tests:  0|7
 total_score: 0/70
 19c5e92
+Thu 17 Aug 2023 08:24:39 PM UTC: 
+ exercises.c | 103 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 100 insertions(+), 3 deletions(-)
+In file included from test.c:1:
+exercises.c:55:5: error: redefinition of ‘main’
+   55 | int main() {
+      |     ^~~~
+exercises.c:26:5: note: previous definition of ‘main’ with type ‘int()’
+   26 | int main(){
+      |     ^~~~
+exercises.c:108:5: error: redefinition of ‘main’
+  108 | int main() {
+      |     ^~~~
+exercises.c:26:5: note: previous definition of ‘main’ with type ‘int()’
+   26 | int main(){
+      |     ^~~~
+test.c: In function ‘test_findMax’:
+test.c:91:18: error: implicit declaration of function ‘findMax’ [-Werror=implicit-function-declaration]
+   91 |     int result = findMax(arr, size);
+      |                  ^~~~~~~
+test.c: In function ‘test_reverseArray’:
+test.c:125:5: error: implicit declaration of function ‘reverseArray’; did you mean ‘test_reverseArray’? [-Werror=implicit-function-declaration]
+  125 |     reverseArray(arr, size);
+      |     ^~~~~~~~~~~~
+      |     test_reverseArray
+test.c: In function ‘test_filterEvenNumbers’:
+test.c:151:19: error: implicit declaration of function ‘filterEvenNumbers’; did you mean ‘test_filterEvenNumbers’? [-Werror=implicit-function-declaration]
+  151 |     int *result = filterEvenNumbers(arr, size, &newSize);
+      |                   ^~~~~~~~~~~~~~~~~
+      |                   test_filterEvenNumbers
+test.c:151:19: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+test.c: At top level:
+test.c:382:5: error: redefinition of ‘main’
+  382 | int main(int argc, char *argv[]) {
+      |     ^~~~
+In file included from test.c:1:
+exercises.c:26:5: note: previous definition of ‘main’ with type ‘int()’
+   26 | int main(){
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5550380
