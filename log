@@ -987,3 +987,32 @@ test.c:47:6: error: ‘readIntArray’ defined but not used [-Werror=unused-func
 cc1: all warnings being treated as errors
 Compilation failed
 c5304c9
+Fri 18 Aug 2023 07:34:00 PM UTC: 
+ exercises.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+test.c: In function ‘test_filterEvenNumbers’:
+test.c:151:19: error: implicit declaration of function ‘filterEvenNumbers’; did you mean ‘test_filterEvenNumbers’? [-Werror=implicit-function-declaration]
+  151 |     int *result = filterEvenNumbers(arr, size, &newSize);
+      |                   ^~~~~~~~~~~~~~~~~
+      |                   test_filterEvenNumbers
+test.c:151:19: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+test.c: In function ‘mergeSortedArrays’:
+test.c:382:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  382 | int main(int argc, char *argv[]) {
+      |     ^~~~
+test.c:410:1: error: expected declaration or statement at end of input
+  410 | }
+      | ^
+test.c:7:6: error: unused variable ‘msg’ [-Werror=unused-variable]
+    7 | char msg[300];
+      |      ^~~
+At top level:
+test.c:382:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  382 | int main(int argc, char *argv[]) {
+      |     ^~~~
+test.c:47:6: error: ‘readIntArray’ defined but not used [-Werror=unused-function]
+   47 | void readIntArray(int arr[], int *size) {
+      |      ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4dcdcae

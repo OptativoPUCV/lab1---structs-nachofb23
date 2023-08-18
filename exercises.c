@@ -147,6 +147,9 @@ información utilizando estructuras anidadas en C. Escribe la función para
 inicializar la información de un libro.
 */
 
+#include <stdio.h>
+#include <string.h>
+
 typedef struct {
   char nombre[50];
   int anioNacimiento;
@@ -159,7 +162,17 @@ typedef struct {
 } Libro;
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
-                      int anioNacimiento, int anioPublicacion) {}
+                      int anioNacimiento, int anioPublicacion) {
+    strncpy(libro->titulo, titulo, sizeof(libro->titulo) - 1);
+    libro->titulo[sizeof(libro->titulo) - 1] = '\0';
+
+    strncpy(libro->autor.nombre, nombreAutor, sizeof(libro->autor.nombre) - 1);
+    libro->autor.nombre[sizeof(libro->autor.nombre) - 1] = '\0';
+    libro->autor.anioNacimiento = anioNacimiento;
+
+    libro->anioPublicacion = anioPublicacion;
+}
+
 
 /*
 Ejercicio 7: Lista enlazada de números
