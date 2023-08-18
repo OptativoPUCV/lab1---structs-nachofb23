@@ -108,6 +108,7 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2, int merged[
     j++;
     k++;
   }
+}
 
 
 
@@ -147,9 +148,6 @@ información utilizando estructuras anidadas en C. Escribe la función para
 inicializar la información de un libro.
 */
 
-#include <stdio.h>
-#include <string.h>
-
 typedef struct {
   char nombre[50];
   int anioNacimiento;
@@ -172,6 +170,7 @@ void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
 
     libro->anioPublicacion = anioPublicacion;
 }
+
 
 
 /*
