@@ -49,7 +49,7 @@ Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y luego devuelva un nuevo arreglo que contenga solo
 los números pares del arreglo original.
 */
-int* filtrar_pares(int arr[], int tam, int* nuevo_tam){
+int* filterEvenNumbers(int arr[], int tam, int* nuevo_tam){
   int num_pares  = 0;
 
   for (int i = 0; i < tam; i++) {
